@@ -1,0 +1,53 @@
+{
+  "name": "weather-app",
+  "version": "1.0.0",
+  "homepage": "https://wildheartt.github.io/weather",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "dev": "webpack serve --mode development --open",
+    "build": "webpack --config webpack.config.cjs --mode production",
+    "format": "prettier --write .",
+    "test": "jest --coverage",
+    "lint": " eslint .",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d dist",
+    "prepare": "husky install"
+  },
+  "devDependencies": {
+    "@babel/core": "^7.26.7",
+    "@babel/preset-env": "^7.26.7",
+    "@eslint/js": "^9.19.0",
+    "babel-jest": "^29.7.0",
+    "babel-loader": "^9.2.1",
+    "css-loader": "^7.1.2",
+    "eslint": "^9.19.0",
+    "eslint-config-prettier": "^10.0.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jest": "^28.11.0",
+    "eslint-plugin-prettier": "^5.2.3",
+    "gh-pages": "^6.3.0",
+    "globals": "^15.14.0",
+    "html-webpack-plugin": "^5.6.3",
+    "husky": "^8.0.3",
+    "jest": "^29.7.0",
+    "jest-environment-jsdom": "^29.7.0",
+    "mini-css-extract-plugin": "^2.9.2",
+    "prettier": "3.4.2",
+    "style-loader": "^4.0.0",
+    "stylelint": "^16.14.1",
+    "stylelint-config-standard": "^37.0.0",
+    "webpack": "^5.76.0",
+    "webpack-cli": "^5.0.0",
+    "webpack-dev-server": "^4.11.1"
+  },
+  "husky": {
+    "hooks": {
+      "pre-commit": "npm run lint && npm run test"
+    }
+  },
+  "dependencies": {
+    "knit": "^0.1.0",
+    "router-otus-lib": "^1.0.0"
+  }
+}
